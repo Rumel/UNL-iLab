@@ -23,20 +23,20 @@ u = User.create(name: "admin", password: "password", email: "admin@example.com",
   print_errors("Admin creation errors", u)
 
 #Instructor 1
-  i = Instructor.create(email: "instructor@example.com", classname: "Test Class 101",
+i = Instructor.create(email: "instructor@example.com", classname: "Test Class 101",
                         semester: "Fall 2014", first_name: "Bill", last_name: "Instructor", user_id: 1)
 
   print_errors("Instructor creation errors", i)
 
-  2.times do |i|
+2.times do |i|
     # User 2, 3
     u = User.create(name: "sponsor" + (i + 1).to_s, password: "password", email: "sponsor" + (1+ i).to_s + "@example.com",
                     password_confirmation: "password", utype: "sponsor")
 
 	print_errors("User creation errors (Sponsor)", u)
 
-	# Create sponsors 1, 2
-	s= Sponsor.create(first_name: (i + 1).to_s, last_name: "Sponsor",
+# Create sponsors 1, 2
+s = Sponsor.create(first_name: (i + 1).to_s, last_name: "Sponsor",
 			organization: "Org " + (1 + i).to_s, 
 			email: "sponsor" + (1+ i).to_s + "@example.com", user_id: i + 2)
 
