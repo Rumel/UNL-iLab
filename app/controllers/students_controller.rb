@@ -63,7 +63,6 @@ class StudentsController < ApplicationController
         render 'new'
       end
     end
-
   end
 
   def show
